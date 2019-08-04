@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  recipe_api:
+    build:
+      context: .
+    ports:
+      - "8002:8002"
+    volumes:
+      - ../recipe_api:/app
+    command: >
+      sh -c "python recipe_api/manage.py runserver 0.0.0.0:8002"
